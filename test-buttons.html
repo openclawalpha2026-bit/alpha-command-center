@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Test</title>
+    <style>
+        body { background: #1a1a2e; color: white; font-family: sans-serif; padding: 50px; }
+        .btn { 
+            background: #e94560; 
+            color: white; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .btn:hover { background: #ff6b6b; }
+        #output { margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; min-height: 100px; }
+    </style>
+</head>
+<body>
+    <h2>Button Functionality Test</h2>
+    <button class="btn" onclick="testSend()">Test Send</button>
+    <button class="btn" onclick="testTask()">Test New Task</button>
+    <button class="btn" onclick="testFile()">Test File Upload</button>
+    
+    <div id="output">Click buttons above...</div>
+    
+    <script>
+        function testSend() {
+            document.getElementById('output').innerHTML += '<br>✅ Send button works!';
+        }
+        function testTask() {
+            const title = prompt('Task name:');
+            if (title) document.getElementById('output').innerHTML += '<br>✅ Task created: ' + title;
+        }
+        function testFile() {
+            document.getElementById('output').innerHTML += '<br>✅ File button clicked (would open file picker)';
+        }
+        console.log('Test page loaded - all functions defined');
+    </script>
+</body>
+</html>
